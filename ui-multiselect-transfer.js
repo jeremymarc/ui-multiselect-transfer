@@ -2,7 +2,8 @@ angular.module('ui.multiselect.transfer', [])
 .directive('uimultiselect', function() {
     return {
         restrict: 'EA',
-        templateUrl: 'ui-multiselect-transfer.html',
+        //templateUrl: 'ui-multiselect-transfer.html',
+        template: '<div> <div class="multiselect-left"> <select ng-model="unselectedItems" multiple="multiple"> <option ng-repeat="c in unselected" value="{{c.id}}" >{{c.name}}</option> </select> </div> <div class="ui-multiselecttransfer-actions multiselect-actions"> <a class="btn move-right" href="javascript:false" ng-click="select()">&lt;-</a> <a class="btn move-left" href="javascript:false" ng-click="unselect()">-&gt;</a> <a class="btn select-all" href="javascript:false" ng-click="selectall()">Select all</a> <a class="btn unselect-all" href="javascript:false" ng-click="unselectall()">Unselect all</a> </div> <div class="multiselect-right"> <select ng-model="selectedItems" multiple="multiple"> <option ng-repeat="c in selected" value="{{c.id}}" >{{c.name}}</option> </select> </div> </div>',
         replace: true,
         scope: {
             selected: '=',

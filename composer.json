@@ -1,0 +1,14 @@
+{
+    "name": "jeremymarc/ui-multiselect-transfer",
+    "description": "Multiselect pick component for angularjs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Marc",
+            "email": "jeremy.marc@me.com"
+        }
+    ],
+    "require": {
+
+    }
+}

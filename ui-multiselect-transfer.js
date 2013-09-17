@@ -25,9 +25,10 @@ angular.module('ui.multiselect.transfer', [])
                 var el, i;
 
                 for(i in scope.selectedItems) {
-                    el = findSelectedElement(scope.selectedItems[i]);
-                    scope.selected.splice($.inArray(el, scope.selected),1);
-                    scope.unselected.push(el);
+                    if (el = findSelectedElement(scope.selectedItems[i])) {
+                        scope.selected.splice($.inArray(el, scope.selected),1);
+                        scope.unselected.push(el);
+                    }
                 }
 
                 sort(scope.unselected);
@@ -37,9 +38,10 @@ angular.module('ui.multiselect.transfer', [])
                 var el, i;
 
                 for(i in scope.unselectedItems) {
-                    el = findUnselectedElement(scope.unselectedItems[i]);
-                    scope.unselected.splice($.inArray(el, scope.unselected),1);
-                    scope.selected.push(el);
+                    if (el = findUnselectedElement(scope.unselectedItems[i])) {
+                        scope.unselected.splice($.inArray(el, scope.unselected),1);
+                        scope.selected.push(el);
+                    }
                 }
 
                 sort(scope.unselected);
